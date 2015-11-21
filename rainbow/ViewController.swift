@@ -40,7 +40,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // textfield delegate functions
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        println("before resign")
         textField.resignFirstResponder()
+        println("after resign")
         return true
     }
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -48,11 +50,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     func textFieldDidEndEditing(textField: UITextField) {
         if (textField.text == ""){
-            textField.text == inputPrompt
+            textField.text = inputPrompt
         }else{
             myLabel.text = textField.text
             changeTextColor()
         }
+        
+
     }
 
     
